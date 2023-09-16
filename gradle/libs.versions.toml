@@ -1,14 +1,14 @@
 [versions]
 
-androidx = "1.10.1"
+androidx = "1.12.0"
 androidxCompat = "1.6.1"
 androidxActivity = "1.7.2"
 androidxFragment = "1.6.1"
-androidxComposeBom = "2023.08.00"
+androidxComposeBom = "2023.09.00"
 androidxComposeCompiler = "1.5.3"
 androidxHilt = "1.0.0"
-androidxLifecycle = "2.6.1"
-androidxNavigation = "2.7.1"
+androidxLifecycle = "2.6.2"
+androidxNavigation = "2.7.2"
 androidxSplashscreen = "1.0.1"
 androidxWindowManager = "1.1.0"
 
