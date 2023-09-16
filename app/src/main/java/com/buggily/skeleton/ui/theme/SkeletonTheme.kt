@@ -23,13 +23,24 @@ fun SkeletonTheme(content: @Composable () -> Unit) {
     val isLight: Boolean = !isSystemInDarkTheme()
 
     val colorScheme: ColorScheme = remember(isLight) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            if (isLight) dynamicLightColorScheme(context) else dynamicDarkColorScheme(context)
+        if (isLight) {
+            lightColorSchemeCompat(context)
         } else {
-            if (isLight) lightColorScheme() else darkColorScheme()
+            darkColorSchemeCompat(context)
         }
     }
 
+    SkeletonTheme(
+        colorScheme = colorScheme,
+        content = content,
+    )
+}
+
+@Composable
+fun SkeletonTheme(
+    colorScheme: ColorScheme,
+    content: @Composable () -> Unit,
+) {
     MaterialTheme(
         colorScheme = colorScheme,
         typography = Typography,

@@ -8,7 +8,7 @@
         android:label="@string/skeleton"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme">
+        android:theme="@style/Theme.Splash">
 
         <activity
             android:name="com.buggily.skeleton.ui.main.MainActivity"
@@ -16,6 +16,8 @@
             android:resizeableActivity="true"
             android:theme="@style/Theme.Splash"
             android:windowSoftInputMode="adjustResize">
+
+            <nav-graph android:value="@navigation/nav_graph" />
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
