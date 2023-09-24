@@ -1,5 +1,6 @@
 package com.buggily.skeleton.ui.main
 
+import android.content.res.Configuration
 import android.os.Build
 import android.os.Bundle
 import androidx.activity.viewModels
@@ -48,8 +49,13 @@ class MainActivity : AppCompatActivity() {
             return
         }
 
-        val isDark: Boolean = resources.getBoolean(R.bool.is_dark)
-        val isLight: Boolean = !isDark
+        val uiMode: Int = resources.configuration.uiMode
+        val isLight: Boolean = when (uiMode and Configuration.UI_MODE_NIGHT_MASK) {
+            Configuration.UI_MODE_NIGHT_NO,
+            Configuration.UI_MODE_NIGHT_UNDEFINED -> true
+
+            else -> false
+        }
 
         val insetsController = WindowInsetsControllerCompat(
             window,
