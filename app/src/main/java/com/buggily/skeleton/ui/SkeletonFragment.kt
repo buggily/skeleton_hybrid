@@ -1,4 +1,4 @@
-package com.buggily.skeleton.ui.home
+package com.buggily.skeleton.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,9 +14,9 @@ import com.buggily.skeleton.ui.theme.SkeletonTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeFragment : Fragment() {
+class SkeletonFragment : Fragment() {
 
-    private val viewModel: HomeViewModel by viewModels()
+    private val viewModel: SkeletonViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -27,7 +27,7 @@ class HomeFragment : Fragment() {
 
         setContent {
             SkeletonTheme {
-                HomeScreen(
+                SkeletonScreen(
                     viewModel = viewModel,
                     modifier = Modifier.fillMaxSize(),
                 )

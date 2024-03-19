@@ -1,4 +1,4 @@
-package com.buggily.skeleton.ui.main
+package com.buggily.skeleton.ui
 
 import android.content.res.Configuration
 import android.os.Build
@@ -15,16 +15,17 @@ import com.buggily.skeleton.R
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity() {
+class SkeletonActivity : AppCompatActivity() {
 
-    private val viewModel: MainViewModel by viewModels()
+    private val viewModel: SkeletonViewModel by viewModels()
     private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         installSplashScreen()
+
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_skeleton)
 
         setupWindow(Build.VERSION.SDK_INT < Build.VERSION_CODES.O)
         setupNavigationController()
@@ -70,7 +71,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupNavigationController() {
         val navHostFragment: NavHostFragment = supportFragmentManager.findFragmentById(
-            R.id.activity_main_nav_host_fragment
+            R.id.activity_skeleton_nav_host_fragment
         ) as NavHostFragment
 
         navController = navHostFragment.navController
