@@ -45,11 +45,6 @@ fun SkeletonTheme(
         colorScheme = colorScheme,
         typography = Typography,
         shapes = Shapes,
-    ) {
-        Surface(
-            content = content,
-            color = MaterialTheme.colorScheme.background,
-            modifier = Modifier.fillMaxSize(),
-        )
-    }
+        content = content,
+    )
 }
