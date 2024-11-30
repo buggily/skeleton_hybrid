@@ -9,13 +9,9 @@ internal fun Project.configureAndroidCompose(
     commonExtension: CommonExtension<*, *, *, *, *, *>,
 ) = with(commonExtension) {
 
-    compileSdk = 34
+    compileSdk = 35
 
     buildFeatures {
         compose = true
-    }
-
-    composeOptions {
-        kotlinCompilerExtensionVersion = getLibs().getVersion("androidxComposeCompiler").toString()
     }
 }
