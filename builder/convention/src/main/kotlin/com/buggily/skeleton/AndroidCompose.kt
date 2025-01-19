@@ -11,6 +11,10 @@ internal fun Project.configureAndroidCompose(
 
     compileSdk = 35
 
+    defaultConfig {
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
     buildFeatures {
         compose = true
     }
