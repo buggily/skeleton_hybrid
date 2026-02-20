@@ -1,6 +1,6 @@
 package com.buggily.skeleton
 
-import com.android.build.api.dsl.CommonExtension
+import com.android.build.api.dsl.ApplicationExtension
 import org.gradle.api.JavaVersion
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.withType
@@ -9,13 +9,13 @@ import org.jetbrains.kotlin.gradle.dsl.kotlinExtension
 import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
 
 internal fun Project.configureKotlinAndroid(
-    commonExtension: CommonExtension<*, *, *, *, *, *>,
-) = with(commonExtension) {
+    applicationExtension: ApplicationExtension,
+) = with(applicationExtension) {
 
     compileSdk = 36
 
     defaultConfig {
-        minSdk = 21
+        minSdk = 23
     }
 
     compileOptions {
