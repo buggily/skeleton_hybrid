@@ -8,7 +8,6 @@ class AndroidHiltConventionPlugin : Plugin<Project> {
 
     override fun apply(target: Project) = with(target) {
         with(pluginManager) {
-            apply("org.jetbrains.kotlin.kapt")
             apply("dagger.hilt.android.plugin")
         }
 
@@ -19,7 +18,7 @@ class AndroidHiltConventionPlugin : Plugin<Project> {
 
 
                 add("implementation", getLib("hilt.android"))
-                add("kapt", getLib("hilt.android.compiler"))
+                add("ksp", getLib("hilt.android.compiler"))
             }
         }
     }
